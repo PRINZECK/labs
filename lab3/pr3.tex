@@ -1,0 +1,150 @@
+\documentclass{article}
+\usepackage{cmap} % Включает CMap-таблицу в русскоязычный PDF, чтобы функции поиска и копирования работали правильно
+\usepackage[T2A]{fontenc} % загружает кодировки шрифтов, T1 для латиницы и T2A для кириллицы
+%\usepackage[utf8]{inputenc} % загружает кодировку UTF-8
+\usepackage[english, russian]{babel} % загружает поддержку языков
+\usepackage{textcase}
+\usepackage{bbding}
+\usepackage{titlesec}
+\usepackage{multirow}
+\usepackage{derivative}
+\usepackage{bigints}
+\usepackage{graphics,bm,array}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{amsmath}
+\begin{document}
+\title{}
+\date{}
+\maketitle{}
+\par
+позволяет привести уравнение (21) к более простому виду
+
+\[
+U_{x x}U_{y y}+c_1U=0, c_1=\frac{1}{2}(4c^2-a^2-b^2),-\infty<x<\infty,y>0)\] \begin{flushright}
+    (25)
+\end{flushright}
+
+с дополнительными условиями
+
+\[
+U|_{y=0}=\phi(x)e^{\frac{a}{2} \cdot x}=\phi_1(x), -\infty<x<\infty\] \begin{flushright}
+    (22$'$)
+\end{flushright}
+
+\[
+U_y|_{y=0}=(\psi(x)-\phi\frac{b}{2}(x))e^{\frac{a}{2} \cdot x}=\psi_1(x), -\infty<x<\infty\] \begin{flushright}
+    (23$'$)
+\end{flushright}
+если только выбрать параметры $\lambda$ и $\mu$ соответствующим образом, 
+
+полагая
+\[\ \lambda=\frac{a}{2}, \mu=-\frac{b}{2}  \]
+\begin{flushright}
+    (26)
+\end{flushright}
+Определение функции $U($x$,$у$)$ по начальным данным и уравнению (25) сводится к построению функции Римана $v(x, y; \xi, \eta)$.
+
+Функция $v$ должна удовлетворять условиям:
+
+\[\ v_{xx}-v_{xx}+c_1v=0,\]
+\begin{flushright}
+    (27)
+\end{flushright}
+\begin{center}
+$
+    \begin{cases}
+        v=1\quad $на\quad характеристике\quad MP,$ \\
+        v=1\quad $на\quad характеристике\quad MQ(рис. 28)$.
+    \end{cases}
+$
+\end{center}
+\begin{flushright}
+    (28)
+\end{flushright}
+
+Будем искать $v$ в виде
+
+\[v=v(z)\]
+\begin{flushright}
+    (29)
+\end{flushright}
+где 
+
+$z=\sqrt{(x-\xi)^2-(y-\eta)^2}$ или $z^2=(x-\xi)^2-(y-\eta)^2,$
+\begin{flushright}
+    (30)
+\end{flushright}
+
+На характеристиках $MP$ и $MQ$ переменная $z$ обращается в нуль, так что $v(0)=1$. Далее, левая часть уравнения (27) преобразуется следующим образом:
+
+\[
+v_{x x}-v_{y y}+c_1v=v''(z)(z^2_x-z^2_y)+v'(z)(z_{x x}-z_{y y})+c_1v=0\]
+
+Дифференцируя выражение для $z^2$ дважды, по $x$ и $y$, получим:
+\[z_{xx}=x-\xi,\]
+\[zz_y=-(y-\eta),\]
+\[zz_{x x}+z^2_x=1,\]
+\[zz_{yy}+z^2_y=-1.\]
+
+Отсюда и из формулы (30) находим:
+
+\[z^2_x-z^2_y=1,z_{xx}-z_{yy}=\frac{1}{z}\]
+
+Уравнение для $v$ принимает следующий вид:
+
+\[v''+\frac{1}{z}v'+c_1v=0\]
+
+
+\maketitle{}
+\par
+при условии и $v$(0) = 1. Решением этого уравнения является функция Бесселя нулевого порядка (см. Дополнение ІІ, часть I,  §1)
+
+\[v(z)=J_0(\sqrt{c_1}z)\]
+
+или
+
+\[v(x,y;\xi,\eta)=J_0(\sqrt{c_1[(x-\xi)^2-(y-\eta)]}).\]
+\begin{flushright}
+    (31)
+\end{flushright}
+Воспользуемся теперь для нахождения $U$$(x,y)$ формулой (10), которая в нашем случае принимает вид 
+
+
+\[U(M) = \frac{U(P) + U(Q)}{2} + \frac{1}{2} \int_P^Q \big(vU_\eta d\xi - U_\eta vd\xi \big) \quad (d\eta = 0).\]
+\begin{flushright}
+    (32)
+\end{flushright}
+
+Вычислим предварительно интеграл по отрезку $PQ$ $(\eta=0)$
+
+
+\[\int_P^Q \big(vU_\eta - U_\eta v \big)d\xi = \int_{x-y}^{x+y} \bigg\{ J_0 \big( \sqrt{V_{c1} \big((x - \xi)^2 - y^2\big)} \big) U_\eta (\xi, 0) -\]
+\[-\frac{U_{(\xi, 0)} \sqrt{c_1} \, J_0'(\sqrt{c_1}\sqrt{(x=e)^2-y^2})}{\sqrt{c_1\big[(x - \xi)^2 - y^2}} \bigg\} d\xi\] 
+\begin{flushright}
+    (33)
+\end{flushright}
+
+Пользуясь начальными условиями (22$'$), (23$'$), находим:
+
+
+\[U(x, y) = \frac{\varphi_1(x - y) + \varphi_1(x + y)}{2} + \frac{1}{2}\int_{x-y}^{x+y} J_0 \big( \sqrt{c1} \sqrt{(x - \xi)^2 - y^2 \big)}  \Psi_1(\xi) d\xi+ \]
+\[\quad + \frac{1}{2} \sqrt{c_1}\, y \int_{x-y}^{x+y} \frac{J_1 ( \sqrt{c_1} \sqrt{(x - \xi)^2 - y^2} \big) \varphi_1(\xi)d\xi}{\sqrt{(x - \xi)^2 - y^2}}.\]
+\begin{flushright}
+    (34)
+\end{flushright}
+
+откуда в силу (24), (22$'$) и (23$'$) получаем формулу
+
+\[u(x, y) = \frac{\varphi(x - y) e^{-\frac{a - b}{2} y} + \varphi(x + y) e^{\frac{a + b}{2} y}}{2}- \]
+\[ - \frac{1}{2} e^{\frac{b}{2} y}  \int_{x-y}^{x+y} \bigg\{ \frac{b}{2} J_0 (\sqrt{c_1} \sqrt{(x - \xi)^2 - y^2} - \]
+\[ - \sqrt{c_1}\, y \frac{J_1 \big( \sqrt{c_1} \sqrt{(x - \xi)^2 - y^2}}{\sqrt{\big(x - \xi)^2 - y^2}} \bigg\} e^{-\frac{a}{2} (x - \xi)}\varphi(\xi) d\xi \]
+\[\quad + \frac{1}{2} e^{\frac{b}{2} y} 
+\int_{x-y}^{x+y} J_0 ( \sqrt{c_1} \sqrt{(x - \xi)^2 - y^2} \big) e^{-\frac{a}{2} (x - \xi)} \Psi(\xi) d\xi.\]
+\begin{flushright}
+    (35)
+\end{flushright}
+
+
+дающее решение поставленной задачи.
+\end{document}
